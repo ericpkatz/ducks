@@ -1,0 +1,23 @@
+{
+  "name": "ducks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "browser-sync": "^2.11.0",
+    "chalk": "^1.1.1",
+    "express": "^4.13.3",
+    "faker": "^3.0.1",
+    "gulp-inject": "^3.0.0",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-print": "^2.0.1",
+    "pg": "^4.4.3",
+    "yargs": "^3.31.0"
+  }
+}

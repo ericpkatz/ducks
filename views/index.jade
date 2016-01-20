@@ -1,0 +1,28 @@
+html
+  head
+    link(href='bootstrap/dist/css/bootstrap.css' rel='stylesheet')
+    link(rel='stylesheet' href="/angular-toastr/dist/angular-toastr.css") 
+  body(ng-app='app')
+    ul.nav.nav-tabs
+      li
+        a(ui-sref='home') Home
+      li
+        a(ui-sref='frogs') Frogs 
+    .container
+      h1 Ducks 
+        = rnd
+      if error
+        h1(style='color:red')= error
+      | {{ 100 }}
+      div(ui-view='')
+      div#toast-container
+
+    script(src='/angular/angular.js')
+    script(src='/angular-ui-router/release/angular-ui-router.js')
+    script(src="/angular-toastr/dist/angular-toastr.tpls.js")
+
+    //- inject:js
+    script(src="/client/app/app.js")
+    script(src="/client/app/home/home.ctrl.js")
+    script(src="/client/app/frogs/list/list.js")
+    //- endinject
