@@ -4,7 +4,7 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon ./node_modules/mocha/bin/mocha test/**/*.spec.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +17,13 @@
     "gulp-inject": "^3.0.0",
     "gulp-nodemon": "^2.0.6",
     "gulp-print": "^2.0.1",
+    "lodash": "^4.0.0",
+    "mocha": "^2.3.4",
     "pg": "^4.4.3",
     "yargs": "^3.31.0"
+  },
+  "devDependencies": {
+    "should": "^8.1.1",
+    "supertest": "^1.1.0"
   }
 }

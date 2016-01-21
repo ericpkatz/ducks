@@ -13,7 +13,7 @@ gulp.task('seed', function(){
   return db.sync()
     .then(function(){
       var users = [];
-      for(var i = 1; i < 1000; i++){
+      for(var i = 1; i < 10000; i++){
         users.push({
           firstName : faker.name.firstName(),
           lastName : faker.name.lastName(),
@@ -27,7 +27,6 @@ gulp.task('seed', function(){
         .then(function(){
           console.log('done');
         });
-      
     });
 });
 
