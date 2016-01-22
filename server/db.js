@@ -18,6 +18,13 @@ module.exports = {
       firstName: Sequelize.STRING, 
       lastName: Sequelize.STRING,
       state: Sequelize.STRING
+    }, { 
+      classMethods: {
+        queryByPage : function(pageIndex){
+          var offset = pageIndex * 20;
+          return this.findAll({ offset: offset, limit : 20, order: ["firstName"] });
+        }
+      } 
     })
   },
   sync : function(){

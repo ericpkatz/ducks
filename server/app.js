@@ -16,8 +16,9 @@ app.get('/', function(req, res, next){
   res.render('index', {rnd: Math.random() * 100});
 });
 
-app.get('/api/frogs', function(req, res, next){
-  Frog.findAll({ limit : 20, order: ["firstName"] })
+app.get('/api/frogs/:pageIndex?', function(req, res, next){
+  var pageIndex = req.params.pageIndex || 0;
+  Frog.queryByPage(pageIndex)
     .then(function(frogs){
       res.send(frogs);
     }, function(err){

@@ -35,15 +35,30 @@ describe('frogs', function(){
         });
     
     });
+
     describe('GET', function(){
-      it('should return the first 20 frogs', function(done){
-        request(app).get('/api/frogs')
-          .end(function(err, resp){
-            var frogs = resp.body;
-            frogs.length.should.equal(20);
-            frogs[0].firstName.should.equal(sortedFrogs[0].firstName);
-            done();
-          });
+      describe('without setting page index', function(){
+        it('should return the first 20 frogs', function(done){
+          request(app).get('/api/frogs')
+            .end(function(err, resp){
+              var frogs = resp.body;
+              frogs.length.should.equal(20);
+              frogs[0].firstName.should.equal(sortedFrogs[0].firstName);
+              done();
+            });
+        });
+      });
+
+      describe('with setting page index', function(){
+        it('should return the second 20 frogs', function(done){
+          request(app).get('/api/frogs/1')
+            .end(function(err, resp){
+              var frogs = resp.body;
+              frogs.length.should.equal(20);
+              frogs[0].firstName.should.equal(sortedFrogs[20].firstName);
+              done();
+            });
+        });
       });
     });
   });
