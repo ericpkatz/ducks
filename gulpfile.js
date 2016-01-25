@@ -41,7 +41,7 @@ gulp.task('inject', function(){
 });
 
 var _error = false;
-gulp.task('dev-server', ['inject', 'seed'], function(){
+gulp.task('dev-server', ['inject'], function(){
   nodemon({
     script: 'server/index.js',
     env: {

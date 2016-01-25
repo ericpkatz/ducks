@@ -5,7 +5,8 @@ var _db;
 
 function db(){
     if(!_db)
-      _db = new Sequelize('postgres://localhost/frog_db');
+      _db = new Sequelize('sqlite:ducks.db', {});
+      //_db = new Sequelize('postgres://localhost/frog_db');
     return _db;
 }
 function connect(){
