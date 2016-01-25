@@ -19,6 +19,7 @@
     "gulp-inject": "^3.0.0",
     "gulp-nodemon": "^2.0.6",
     "gulp-print": "^2.0.1",
+    "jade": "^1.11.0",
     "lodash": "^4.0.0",
     "mocha": "^2.3.4",
     "pg": "^4.4.3",
