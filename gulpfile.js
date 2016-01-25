@@ -79,6 +79,7 @@ function startBrowserfy(){
     if(_error)
       return;
     browserSync({
+      port: config.port,
       proxy: 'localhost:' + config.port,
       files: '**/*.*'
     });
