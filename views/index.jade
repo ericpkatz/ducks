@@ -9,11 +9,8 @@ html
       li
         a(ui-sref='frogs') Frogs 
     .container
-      h1 Ducks 
-        = rnd
       if error
         h1(style='color:red')= error
-      | {{ 100 }}
       div(ui-view='')
       div#toast-container
 
@@ -24,5 +21,7 @@ html
     //- inject:js
     script(src="/client/app/app.js")
     script(src="/client/app/home/home.ctrl.js")
+    script(src="/client/app/frogs/edit/edit.js")
     script(src="/client/app/frogs/list/list.js")
+    script(src="/client/app/frogs/detail/detail.js")
     //- endinject

@@ -1,0 +1,11 @@
+<a ui-sref='frog({id: frog.id})'>Back</a>
+<pre>
+  {{ frog | json }}
+</pre>
+<form>
+  <div class='form-group'>
+    <label for='firstName'>First Name</label>
+    <input class='form-control' ng-model='frog.firstName' />
+  </div>
+  <button class='btn btn-primary' ng-click='save()'>Save</button>
+</form>

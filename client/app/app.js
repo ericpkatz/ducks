@@ -22,6 +22,38 @@ angular.module('app')
           }
         },
         controller : 'FrogsListCtrl'
+      })
+      .state('frog', {
+        templateUrl: '/client/app/frogs/detail/detail.html',
+        url: '/frog/:id',
+        resolve : {
+          frog : function($http, $stateParams, toastr){
+            return $http.get('/api/frogs/' + $stateParams.id)
+                    .then(function(result){
+                      return result.data;
+                    }, function(error){
+                      toastr.error(error);
+                    
+                    });
+          }
+        },
+        controller : 'FrogDetailCtrl'
+      })
+      .state('frogEdit', {
+        templateUrl: '/client/app/frogs/edit/edit.html',
+        url: '/frog/edit/:id',
+        resolve : {
+          frog : function($http, $stateParams, toastr){
+            return $http.get('/api/frogs/' + $stateParams.id)
+                    .then(function(result){
+                      return result.data;
+                    }, function(error){
+                      toastr.error(error);
+                    
+                    });
+          }
+        },
+        controller : 'FrogEditCtrl'
       });
   
   });

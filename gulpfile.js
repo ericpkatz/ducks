@@ -40,8 +40,12 @@ gulp.task('inject', function(){
 
 });
 
+gulp.task('inject:watch', ['inject'], function(){
+  gulp.watch(['./client/app/app.js', './client/app/**/*.js'], ['inject']);
+});
+
 var _error = false;
-gulp.task('dev-server', ['inject'], function(){
+gulp.task('dev-server', ['inject:watch'], function(){
   nodemon({
     script: 'server/index.js',
     env: {

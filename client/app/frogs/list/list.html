@@ -1,5 +1,5 @@
 <ul>
   <li ng-repeat='frog in frogs'>
-      {{ frog }}
+    <a ui-sref='frog({id: frog.id})'>{{ frog }}</a>
   </li>
 </ul>
